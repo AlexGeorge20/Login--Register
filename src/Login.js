@@ -36,6 +36,7 @@ localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
       // setErrmsg(errmsg);
       console.log("MATCH", match);
       navigate("/home",{replace:true})
+     
       console.log("Pg replaced");
 
       // setLoggedin(!loggedin)

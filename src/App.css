@@ -89,3 +89,15 @@ li{
   background-color:cadetblue;
   color: white;
 }
+.logoutbtn{
+  color:black;
+  padding: 20px ;
+border-radius: 10px;
+background-color:khaki;
+width: 100px;
+text-align: center;
+}
+.logoutbtn:hover{
+  background-color:cadetblue;
+  color: white;
+}
