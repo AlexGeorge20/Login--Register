@@ -47,11 +47,14 @@ localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
     }
   }
   return (
-    <div className="login">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label for="email">Email</label>
+    <div className="">
+      <h1 className="login">Login</h1>
+      <div className="form">
+      <form onSubmit={handleSubmit} className='form'>
+       <div className="form-div">
+       <label className="form-label" for="email">Email</label>
         <input
+         className="form-input"
           placeholder="Enter Email.."
           type="email"
           id="email1"
@@ -60,8 +63,12 @@ localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
           }}
           required
         />
-        <label for="password">Password</label>
+
+       </div>
+        <div className="form-div">
+        <label className="form-label" for="password">Password</label>
         <input
+        className="form-input"
           placeholder="Enter Password"
           type="password"
           id="pwd1"
@@ -70,16 +77,25 @@ localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
           }}
           required
         />
-        <button type="submit">Login</button>
+
+        </div>
+       
+        <button className="btn" type="submit">Login</button>
        
       </form>
       <div className={`${errmsg ? "show" : "hide"}`}>
         CREDENTIALS DOES NOT MATCH
       </div>
-      <Link to="/register" className="link">
-         Register Here
-      </Link>
+    
+
+      </div>
+     <div className="reg-btn">
+        <Link to="/register" className="link">
+            Register Here
+          </Link>
       
+     </div>
+     
     </div>
   );
 };

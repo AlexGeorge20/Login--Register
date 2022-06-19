@@ -29,19 +29,31 @@ function handleSubmit(e){
     }
     
   return (
-    <div className='register'>
-  <h1>Register</h1>
-<form onSubmit={handleSubmit}>
-        <label for='email'>Email</label>
-        <input placeholder='Enter Email..' type='email' id='email1'
+    <div className=''>
+  <h1 className='register'>Register</h1>
+<div className='form'>
+<form onSubmit={handleSubmit} className='form'>
+        
+        <div className='form-div'>
+        <label className='form-label' for='email'>Email</label>
+        <input className='form-input' placeholder='Enter Email..' type='email' id='email1'
         onBlur={(e)=>{setEmailReg(e.target.value)}}/>
-        <label for='password'>Password</label>
-        <input placeholder='Enter Password' type='password' id='pwd1'
+        </div>
+        <div className='form-div'>
+        <label className='form-label' for='password'>Password</label>
+        <input className='form-input' placeholder='Enter Password' type='password' id='pwd1'
         onBlur={(e)=>{setPwdReg(e.target.value)}}/>
-
-    <button>Register</button>
+         </div>
+    <button className='btn'>Register</button>
       </form>
+</div>
+
+
+      
+      <div className='reg-btn'>
       <Link to="/login" className='link' > Login Here</Link>
+
+      </div>
      
     </div>
   

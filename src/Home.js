@@ -16,7 +16,7 @@ const navigate=useNavigate();
       <Nav />
     <h1>Home page <h6>Hi,You are logged in</h6>
     </h1>
-    <div>
+    <div className='abt-btn'>
     {/* <button onClick={handleClick} className='logoutbtn' >Logout</button> */}
 
       <Link to="/about" className='link'>To About page</Link>
