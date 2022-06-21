@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .link{
@@ -142,6 +142,6 @@ text-align: center;
 .btn:hover{
   background-color: cadetblue;
 }
-.abt-btn{
+.abt-btn,h6{
   padding-top: 5rem;
 }

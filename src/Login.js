@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 // import Home from './Home'
-const Login = () => {
+
+const Login = ({setLoggedIn}) => {
   let match;
   const [emailval, setEmailval] = useState("");
   const [pwdval, setPwdval] = useState("");
   const [errmsg, setErrmsg] = useState(false);
+    
 
   const navigate=useNavigate();
   // const [loggedin,setLoggedin]=useState(false)
   // console.log("LOginEmail-",emailval);
   // console.log("LoginPwdval",pwdval);
-const b=JSON.parse(localStorage.getItem('LoginCREDENTIAL') ) || []
-const[logincred,setLoginCred]=useState(b);
+// const b=JSON.parse(localStorage.getItem('LoginCREDENTIAL') ) || []
+// const[logincred,setLoginCred]=useState('');
   const getData = JSON.parse(localStorage.getItem("CREDENTIAL"));
   console.log("STORAGE",  getData);
 
@@ -23,10 +25,11 @@ const[logincred,setLoginCred]=useState(b);
     console.log("LoginPwdval", pwdval);
     const loginData = { email: emailval, password: pwdval };
     console.log("LOGINDATA", loginData.email,loginData.password);
-    logincred.push({"email":emailval,"password":emailval})
-    setLoginCred(logincred)
-console.log("LOGIN creD",logincred);
-localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
+    // logincred.push({"email":emailval,"password":emailval})
+    // setLoginCred(logincred)
+// console.log("LOGIN creD",logincred);
+// localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
+
 
     match = getData.filter(
       (ele) =>
@@ -35,16 +38,19 @@ localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
     if (match.length > 0) {
       // setErrmsg(errmsg);
       console.log("MATCH", match);
+  // to prevent going back to prev pg on back btn
       navigate("/home",{replace:true})
-     
+      setLoggedIn(true)
+      // console.log("SETLOggedIn",loggedIn);
       console.log("Pg replaced");
-
+   
       // setLoggedin(!loggedin)
     } else {
       console.log("NO MATCH");
       setErrmsg(!errmsg);
       console.log("errormsgfn", errmsg);
     }
+   
   }
   return (
     <div className="">
@@ -87,7 +93,6 @@ localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincred))
         CREDENTIALS DOES NOT MATCH
       </div>
     
-
       </div>
      <div className="reg-btn">
         <Link to="/register" className="link">

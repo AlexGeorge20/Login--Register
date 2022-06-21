@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import Nav from './nav';
 import { Link } from 'react-router-dom';
 
-const Home  = () => {
+const Home  = ({setLoggedIn}) => {
 const navigate=useNavigate();
 
 // function handleClick(){
@@ -13,7 +13,7 @@ const navigate=useNavigate();
 
   return (
     <div>
-      <Nav />
+      <Nav setLoggedIn={setLoggedIn} />
     <h1>Home page <h6>Hi,You are logged in</h6>
     </h1>
     <div className='abt-btn'>
