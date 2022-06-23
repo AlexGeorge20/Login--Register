@@ -8,7 +8,7 @@ const Login = ({setLoggedIn}) => {
   const [emailval, setEmailval] = useState("");
   const [pwdval, setPwdval] = useState("");
   const [errmsg, setErrmsg] = useState(false);
-    
+    let logincredential=[]
 
   const navigate=useNavigate();
   // const [loggedin,setLoggedin]=useState(false)
@@ -43,15 +43,18 @@ const Login = ({setLoggedIn}) => {
       setLoggedIn(true)
       // console.log("SETLOggedIn",loggedIn);
       console.log("Pg replaced");
-   
-      // setLoggedin(!loggedin)
+      logincredential.push({"email":emailval,"password":pwdval})
+      localStorage.setItem('LoginCREDENTIAL',JSON.stringify(logincredential))
+     
     } else {
       console.log("NO MATCH");
       setErrmsg(!errmsg);
       console.log("errormsgfn", errmsg);
     }
-   
-  }
+    
+     }
+
+    
   return (
     <div className="">
       <h1 className="login">Login</h1>
