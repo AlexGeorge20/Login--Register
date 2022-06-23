@@ -145,3 +145,10 @@ text-align: center;
 .abt-btn,h6{
   padding-top: 5rem;
 }
+.errorh1{
+ color: green;
+}
+.pgh3{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

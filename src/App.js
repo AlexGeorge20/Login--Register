@@ -16,6 +16,7 @@ function App() {
   console.log("SETLOggedIn",loggedIn);
 
 useEffect(()=>{
+  console.log("USEEFFT WORK");
   const b=JSON.parse(localStorage.getItem('LoginCREDENTIAL') ) 
   if(b!=null){
     // b.length>0  ? setLoggedIn(true): setLoggedIn(false)
@@ -25,10 +26,10 @@ useEffect(()=>{
     setLoggedIn(false)
     console.log("RerenderSTORage to false");
   }
-},[loggedIn])
+},[])
 
 
-
+  
   return (
     <Router>
       <div className="App">
@@ -39,18 +40,20 @@ useEffect(()=>{
       { loggedIn && (<>
             <Route path='/home'  element={<Home setLoggedIn={setLoggedIn}/>} />
             <Route path='/about' element={<About/>} />
+            <Route render={() => <Navigate to="/home" />} />
             {/* <Route  path="*"  element={<Error404/>} />  */}
             </>
 )}
 {(!loggedIn) && (<>         
    <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />}/>
               <Route path='/register' element={<Register/>}/>
+           
               {/* <Route  path="*"  element={<Error404/>} />  */}
               </> 
 )}
 
 
- <Route  path="*"  element={<Error404/>} /> 
+ <Route  path="*"  element={<Error404 loggedIn={loggedIn}/>} /> 
        </Routes>
        
                  

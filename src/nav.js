@@ -5,8 +5,9 @@ import './App.css';
 function Nav({setLoggedIn}) {
     const navigate=useNavigate();
     function handleClick(){
-        navigate("/login")
+      navigate("/login")
         setLoggedIn(false)
+       
         localStorage.removeItem("LoginCREDENTIAL")
 
     }
