@@ -40,14 +40,14 @@ useEffect(()=>{
       { loggedIn && (<>
             <Route path='/home'  element={<Home setLoggedIn={setLoggedIn}/>} />
             <Route path='/about' element={<About/>} />
-            <Route render={() => <Navigate to="/home" />} />
+            <Route path='/' element={<Home/>} />
             {/* <Route  path="*"  element={<Error404/>} />  */}
             </>
 )}
 {(!loggedIn) && (<>         
-   <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />}/>
+               <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />}/>
               <Route path='/register' element={<Register/>}/>
-           
+              <Route path='/' element={<Login/>}/>
               {/* <Route  path="*"  element={<Error404/>} />  */}
               </> 
 )}
