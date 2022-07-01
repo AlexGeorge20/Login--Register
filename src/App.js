@@ -41,14 +41,14 @@ useEffect(()=>{
             <Route path='/home'  element={<Home setLoggedIn={setLoggedIn}/>} />
             <Route path='/about' element={<About/>} />
             <Route path='/' element={<Home/>} />
-            {/* <Route  path="*"  element={<Error404/>} />  */}
+          
             </>
 )}
 {(!loggedIn) && (<>         
                <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />}/>
               <Route path='/register' element={<Register/>}/>
-              <Route path='/' element={<Login/>}/>
-              {/* <Route  path="*"  element={<Error404/>} />  */}
+              <Route path='/' element={<Login />}/>
+          
               </> 
 )}
 
@@ -64,3 +64,4 @@ useEffect(()=>{
 }
 
 export default App;
+   

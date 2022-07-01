@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+
 // import Login from './Login';
 const Register = () => {
 
@@ -9,7 +11,7 @@ const Register = () => {
   const[cred,setCred]=useState(a);
   // const[cred,setCred]=useState([]);
   // const getData=JSON.parse(localStorage.getItem('CREDENTIAL'))
-
+  const navigate=useNavigate();
   console.log('Emailreg',emailReg);
   console.log('Pwdreg',pwdReg);
   // console.log("GETData",getData);
@@ -26,6 +28,7 @@ function handleSubmit(e){
     // let a= JSON.parse(localStorage.getItem('CREDENTIAL'))
     // //a is String
     console.log('LoCAlstorge Reg cred',cred);
+    navigate("/login",{replace:true})
     }
     
   return (
@@ -44,7 +47,7 @@ function handleSubmit(e){
         <input className='form-input' placeholder='Enter Password' type='password' id='pwd1'
         onBlur={(e)=>{setPwdReg(e.target.value)}}/>
          </div>
-    <button className='btn'>Register</button>
+    <button  className='btn'>Register</button>
       </form>
 </div>
 
